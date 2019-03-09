@@ -1,5 +1,6 @@
 #include <Servo.h>
-// srr feb 2019 - added prints and delays
+
+//useful global constants
 #define CLAW_PIN 6
 #define LEFT_PIN 9
 #define RIGHT_PIN 10
@@ -14,9 +15,8 @@ void setup() {
   claw.attach(CLAW_PIN);
 
 }
-// start middle - full right, full left and back to middle
-void fullSweep() {
 
+void fullSweep() {
   middle.write(90);
   delay(1000);
 
@@ -92,7 +92,6 @@ void testClaw() {
 void loop() {
 
   fullSweep();
-
   testLeft();
   delay(1000);
   testRight();
